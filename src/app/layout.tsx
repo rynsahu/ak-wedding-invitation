@@ -10,7 +10,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Wedding Invitation | Aryan weds Komal | March 11th & 13th",
-  description: "Wedding invitation of Aryan & Komal",
+  // description: "Wedding invitation of Aryan & Komal",
 };
 
 export default function RootLayout({
