@@ -1,7 +1,7 @@
 import Image from "../../../node_modules/next/image";
 import Link from "../../../node_modules/next/link";
-import tajFrontImg from "../../assets/tajFront.svg";
-import vectorDownImg from "../../assets/VectorDown.svg";
+import tajFrontImg from "../../assets/tajFront.jpg";
+import vectorDownImg from "../../assets/VectorDown.jpg";
 
 const WeddingInvitation = () => {
   return (

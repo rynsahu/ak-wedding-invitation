@@ -1,4 +1,4 @@
-import tajEntranceImg from "@/assets/tajEntrance.svg";
+import tajEntranceImg from "@/assets/tajEntrance.jpg";
 import Image from "next/image";
 import Link from "next/link";
 

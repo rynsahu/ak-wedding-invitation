@@ -1,7 +1,6 @@
 import Image from "../../../node_modules/next/image";
 import Link from "../../../node_modules/next/link";
-import tajFrontImg from "../../assets/tajFront.svg";
-import vectorDownImg from "../../assets/VectorDown.svg";
+import vectorDownImg from "../../assets/VectorDown.jpg";
 
 const WeddingTimeVenue = () => {
   return (

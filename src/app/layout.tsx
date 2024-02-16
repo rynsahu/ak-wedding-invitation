@@ -9,8 +9,8 @@ import {
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Aryan wed's Komal",
-  description: "Wedding invitation",
+  title: "Wedding Invitation | Aryan weds Komal | March 11th & 13th",
+  description: "Wedding invitation of Aryan & Komal",
 };
 
 export default function RootLayout({
