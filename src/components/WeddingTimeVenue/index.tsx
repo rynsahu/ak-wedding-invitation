@@ -1,6 +1,7 @@
 import Image from "../../../node_modules/next/image";
 import Link from "../../../node_modules/next/link";
 import vectorDownImg from "../../assets/VectorDown.jpg";
+import EventCountdown from "../EventCountdown";
 
 const WeddingTimeVenue = () => {
   return (
@@ -17,6 +18,8 @@ const WeddingTimeVenue = () => {
       {/* ------- */}
       <div className="flex flex-col gap-8 z-10 pb-[95px] mt-[-20px]">
         <span className="font-serif-display mb-1 text-lg">{"Time & Venue"}</span>
+        {/* --------- */}
+        <EventCountdown />
         {/* --- Wedding Venue --- */}
         <div className="flex flex-col gap-3 bg-[#FBF8F2] mx-5 rounded-lg p-3">
           <span className="font-serif-display text-lg">Wedding</span>
