@@ -7,6 +7,7 @@ import {
   notoColorEmojiFont,
 } from "./fonts";
 import "./globals.css";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   title: "Wedding Invitation | Aryan weds Komal | March 11th & 13th",
@@ -28,6 +29,7 @@ export default function RootLayout({
           {children}
         </div>
       </body>
+      <GoogleAnalytics gaId="G-QRMYSP4LG6" />
     </html>
   );
 }
