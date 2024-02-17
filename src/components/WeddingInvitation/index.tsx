@@ -38,13 +38,14 @@ const WeddingInvitation = () => {
         <p className="font-krylon px-8 text-lg">request the honor of your presence at the <br/>celebration of their union.</p>
         <p className="mt-[5%] font-krylon px-8 text-lg text-[#9A2143]">Be our guest <br/>we expect your presence at <br/>our Wedding {"&"} Reception.</p>
         {/* ------- */}
-          <Link 
-            className="mt-[9%] flex items-center text-md gap-1 font-serif-display text-white bg-[#9A2143] px-5 py-3 rounded-tl-2xl rounded-br-2xl justify-center w-[200px]"
-            href={"#ak-time-&-Venue"}
-          >
-            <span className="font-emoji text-lg mt-[-2px]">🗓️</span>
-            <span>{"Time & Venue"}</span>
-          </Link>
+        <div className="mt-6">
+          <div className="flex justify-center items-center mb-2">
+            <div className="py-1 px-[10px] h-[32px] border-2 border-[#9A2143] rounded-full box-content opacity-75">
+              <div className="w-[4px] h-[10px] rounded-[25%] bg-[#9A2143] scroll-animation mt-3"></div>
+            </div>
+          </div>
+          <span className="text-[#9A2143]">Scroll Down</span>
+        </div>
       </div>
       {/* ------- */}
       <div className="absolute bottom-0">
