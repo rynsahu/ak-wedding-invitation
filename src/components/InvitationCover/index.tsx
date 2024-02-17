@@ -1,6 +1,6 @@
 import tajEntranceImg from "@/assets/tajEntrance.jpg";
 import Image from "next/image";
-import Link from "next/link";
+import OpenInvitationButton from "../OpenInvitationButton/index";
 
 const InvitationCover = () => {
   return (
@@ -15,16 +15,10 @@ const InvitationCover = () => {
           {/* ---------- */}
           <div className="flex flex-col gap-3 items-center font-krylon">
             <span className="">The Wedding Of</span>
-            <h2 className="font-comforter text-4xl">{"Aryan & Komal"}</h2>
+            <h2 className="font-comforter text-4xl text-[#9A2143]">{"Aryan & Komal"}</h2>
           </div>
           {/* ---------- */}
-          <Link 
-            className="flex items-center gap-1 font-serif-display text-white bg-[#9A2143] px-5 py-3 rounded-tl-2xl rounded-br-2xl"
-            href="#ak-wedding-invitation"
-          >
-            <span className="font-emoji text-lg mt-[-2px]">💌</span>
-            <span>Open Invitation</span>
-          </Link>
+          <OpenInvitationButton />
         </div>
       </div>
 
