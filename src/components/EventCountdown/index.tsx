@@ -44,7 +44,7 @@ const CountdownTimer = ({ targetDate }: any) => {
 };
 
 const EventCountdown = () => {
-  const WEDDING_EVENT_DATE_IN_MS = new Date().getTime() + (23 * 24 * 60 * 60 * 1000)
+  const WEDDING_EVENT_DATE_IN_MS = new Date('2024-03-11T19:00:00').getTime();
 
   return (
     <div className='flex justify-center'>
