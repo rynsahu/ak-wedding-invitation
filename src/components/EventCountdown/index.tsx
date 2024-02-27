@@ -33,7 +33,7 @@ const CountdownTimer = ({ targetDate, onDateExpired }: any) => {
   const isDateExpired = days + hours + minutes + seconds <= 0;
 
   useEffect(() => {
-    onDateExpired(targetDate);
+    if (isDateExpired) onDateExpired(targetDate);
   }, [isDateExpired]);
 
   if (isDateExpired) {
