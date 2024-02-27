@@ -1,5 +1,6 @@
 'use client'
 import { useCountdown } from '@/hooks/useCountDown';
+import { useEffect } from 'react';
 
 const Completion = () => <span>Thank you for your warm wishes!</span>;
 
@@ -26,10 +27,16 @@ const ShowCounter = ({ days, hours, minutes, seconds }: any) => {
   );
 };
 
-const CountdownTimer = ({ targetDate }: any) => {
+const CountdownTimer = ({ targetDate, onDateExpired }: any) => {
   const [days, hours, minutes, seconds] = useCountdown(targetDate);
 
-  if (days + hours + minutes + seconds <= 0) {
+  const isDateExpired = days + hours + minutes + seconds <= 0;
+
+  useEffect(() => {
+    onDateExpired(targetDate);
+  }, [isDateExpired]);
+
+  if (isDateExpired) {
     return <Completion />;
   } else {
     return (
@@ -43,12 +50,16 @@ const CountdownTimer = ({ targetDate }: any) => {
   }
 };
 
-const EventCountdown = () => {
-  const WEDDING_EVENT_DATE_IN_MS = new Date('2024-03-11T19:00:00').getTime();
+const EventCountdown = ({ onDateExpired, eventDate }: any) => {
+  const WEDDING_EVENT_DATE_IN_MS = new Date(eventDate).getTime();
 
   return (
     <div className='flex justify-center'>
-      <CountdownTimer targetDate={WEDDING_EVENT_DATE_IN_MS} suppressHydrationWarning />
+      <CountdownTimer
+        onDateExpired={onDateExpired}
+        targetDate={WEDDING_EVENT_DATE_IN_MS} 
+        suppressHydrationWarning
+      />
     </div>
   );
 }
