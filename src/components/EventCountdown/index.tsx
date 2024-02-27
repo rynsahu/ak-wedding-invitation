@@ -2,7 +2,12 @@
 import { useCountdown } from '@/hooks/useCountDown';
 import { useEffect } from 'react';
 
-const Completion = () => <span>Thank you for your warm wishes!</span>;
+const Completion = () => (
+  <div className='flex flex-col text-center justify-center items-center'>
+    <span>Thank you for your warm wishes!</span>
+    <span className="font-emoji">🙏</span>
+  </div>
+);
 
 const DateTimeDisplay = ({ value, type, isDanger }: any) => {
   return (
