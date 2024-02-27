@@ -7,7 +7,7 @@ const Completion = () => <span>Thank you for your warm wishes!</span>;
 const DateTimeDisplay = ({ value, type, isDanger }: any) => {
   return (
     <div className={isDanger ? 'countdown danger' : 'countdown'}>
-      <p>{value}</p>
+      <p suppressHydrationWarning>{`${value}`}</p>
       <span>{type}</span>
     </div>
   );
