@@ -55,6 +55,19 @@ const EventVenue = () => {
           <span>Location</span>
         </Link>
       </div>
+      {/* ----- Disable Invite ----- */}
+      {eventDate !== WEDDING_DATE && (
+        <div className="flex flex-col gap-3 bg-[#f9f9f9] mx-5 rounded-lg p-3 !text-[#cfcfcf]">
+          <span className="font-serif-display text-lg">Wedding</span>
+          <div className="flex flex-col gap-1">
+            <span>Mon, 11th Mar 2024 | At 07:00 PM</span>
+            <span className="text-sm">Mohini Green Garden,<br/>Sanigawan, Kanpur, Uttar Pradesh 208021</span>
+          </div>
+          <button className="flex items-center gap-1 font-serif-display mt-2 border border-[#cfcfcf] px-5 py-3 rounded-tl-2xl rounded-br-2xl justify-center">
+            <span>Location</span>
+          </button>
+        </div>
+      )}
     </div>
   );
 }
