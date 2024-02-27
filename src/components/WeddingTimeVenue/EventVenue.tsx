@@ -11,6 +11,7 @@ const EventVenue = () => {
 
   const handleDateExpired = (expiredDate: any) => {
     if (expiredDate === new Date(WEDDING_DATE).getTime()) setEventDate(RECEPTION_DATE);
+    else if (expiredDate === new Date(RECEPTION_DATE).getTime()) setEventDate('2024-03-12T19:00:00');
   }
 
   return (
@@ -55,7 +56,11 @@ const EventVenue = () => {
           <span>Location</span>
         </Link>
       </div>
-      {/* ----- Disable Invite ----- */}
+      {/* ----------- */}
+      {/* ----------- */}
+      {/* ----------- */}
+      {/* ----------- */}
+      {/* -----  Wedding Disabled Venue ----- */}
       {eventDate !== WEDDING_DATE && (
         <div className="flex flex-col gap-3 bg-[#f9f9f9] mx-5 rounded-lg p-3 !text-[#cfcfcf]">
           <span className="font-serif-display text-lg">Wedding</span>
@@ -64,6 +69,19 @@ const EventVenue = () => {
             <span className="text-sm">Mohini Green Garden,<br/>Sanigawan, Kanpur, Uttar Pradesh 208021</span>
           </div>
           <button className="flex items-center gap-1 font-serif-display mt-2 border border-[#cfcfcf] px-5 py-3 rounded-tl-2xl rounded-br-2xl justify-center">
+            <span>Location</span>
+          </button>
+        </div>
+      )}
+      {/* --- Reception Disabled Venue --- */}
+      {eventDate !== RECEPTION_DATE && (
+        <div className="flex flex-col gap-3 bg-[#f9f9f9] mx-5 mt-2 rounded-lg p-3 !text-[#cfcfcf]">
+          <span className="font-serif-display text-lg">Reception</span>
+          <div className="flex flex-col gap-1">
+            <span>Wed, 13th Mar 2024 | At 07:00 PM</span>
+            <span className="text-sm">Narayan Heritage Party Lawn,<br/>Mainawati Marg, Kanpur, Uttar Pradesh 208002</span>
+          </div>
+          <button className="flex items-center gap-1 font-serif-display mt-2 border border-[#9A2143] px-5 py-3 rounded-tl-2xl rounded-br-2xl justify-center">
             <span>Location</span>
           </button>
         </div>
