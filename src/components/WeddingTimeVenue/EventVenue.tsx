@@ -4,8 +4,8 @@ import Link from "next/link";
 import EventCountdown from "../EventCountdown";
 
 const EventVenue = () => {
-  const WEDDING_DATE = '2024-02-27T12:45:00';
-  const RECEPTION_DATE = '2024-02-27T12:45:00';
+  const WEDDING_DATE = '2024-03-11T19:00:00';
+  const RECEPTION_DATE = '2024-03-13T19:00:00';
 
   const [eventDate, setEventDate] = useState(WEDDING_DATE);
 
