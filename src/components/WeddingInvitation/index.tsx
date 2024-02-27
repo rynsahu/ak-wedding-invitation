@@ -1,7 +1,7 @@
 import Image from "../../../node_modules/next/image";
-import Link from "../../../node_modules/next/link";
 import tajFrontImg from "../../assets/tajFront.jpg";
 import vectorDownImg from "../../assets/VectorDown.jpg";
+import TagLine from "./TagLine";
 
 const WeddingInvitation = () => {
   return (
@@ -36,7 +36,7 @@ const WeddingInvitation = () => {
       {/* ------- */}
       <div className="absolute top-1/2 left-1/2 translate-x-[-50%] translate-y-[10%] w-full flex flex-col mt-3 items-center z-20">
         <p className="font-krylon px-8 text-lg">request the honor of your presence at the <br/>celebration of their union.</p>
-        <p className="mt-[5%] font-krylon px-8 text-lg text-[#9A2143]">Be our guest <br/>we expect your presence at <br/>our Wedding {"&"} Reception.</p>
+        <TagLine />
         {/* ------- */}
         <div className="mt-6">
           <div className="flex justify-center items-center mb-2">

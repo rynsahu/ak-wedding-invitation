@@ -2,16 +2,24 @@
 import { useState } from "react";
 import Link from "next/link";
 import EventCountdown from "../EventCountdown";
+import { usePathname } from "next/navigation";
 
 const EventVenue = () => {
   const WEDDING_DATE = '2024-03-11T23:30:00';
   const RECEPTION_DATE = '2024-03-13T23:30:00';
 
-  const [eventDate, setEventDate] = useState<any>(WEDDING_DATE);
+  const pathname = usePathname();
+  const isReceptionInvitation = pathname.includes("invitation");
+  const isWeddingInvitation = pathname.includes("invite");
+  const INIT_EVENT_DATE = isReceptionInvitation ? RECEPTION_DATE : WEDDING_DATE;
+
+  const [eventDate, setEventDate] = useState<any>(INIT_EVENT_DATE);
 
   const handleDateExpired = (expiredDate: any) => {
-    if (expiredDate === new Date(WEDDING_DATE).getTime()) setEventDate(RECEPTION_DATE);
-    else if (expiredDate === new Date(RECEPTION_DATE).getTime()) setEventDate(new Date().getTime());
+    if (!isReceptionInvitation && !isWeddingInvitation) {
+      if (expiredDate === new Date(WEDDING_DATE).getTime()) setEventDate(RECEPTION_DATE);
+      else if (expiredDate === new Date(RECEPTION_DATE).getTime()) setEventDate(new Date().getTime());
+    }
   }
 
   return (
@@ -23,7 +31,7 @@ const EventVenue = () => {
         onDateExpired={handleDateExpired}
       />
       {/* --- Wedding Venue --- */}
-      {new Date().getTime() <= new Date(WEDDING_DATE).getTime() && (
+      {!isReceptionInvitation && new Date().getTime() <= new Date(WEDDING_DATE).getTime() && (
         <div className="flex flex-col gap-3 bg-[#FBF8F2] mx-5 rounded-lg p-3">
           <span className="font-serif-display text-lg">Wedding</span>
           <div className="flex flex-col gap-1 text-[#1E2742]">
@@ -41,7 +49,7 @@ const EventVenue = () => {
         </div>
       )}
       {/* --- Reception Venue --- */}
-      {new Date().getTime() <= new Date(RECEPTION_DATE).getTime() && (
+      {!isWeddingInvitation && new Date().getTime() <= new Date(RECEPTION_DATE).getTime() && (
         <div className="flex flex-col gap-3 bg-[#FBF8F2] mx-5 mt-2 rounded-lg p-3">
           <span className="font-serif-display text-lg">Reception</span>
           <div className="flex flex-col gap-1 text-[#1E2742]">
@@ -63,7 +71,7 @@ const EventVenue = () => {
       {/* ----------- */}
       {/* ----------- */}
       {/* --- Reception Disabled Venue --- */}
-      {new Date().getTime() > new Date(RECEPTION_DATE).getTime() && (
+      {!isWeddingInvitation && new Date().getTime() > new Date(RECEPTION_DATE).getTime() && (
         <div className="flex flex-col gap-3 bg-[#f9f9f9] mx-5 mt-2 rounded-lg p-3 !text-[#cfcfcf] courser-default">
           <span className="font-serif-display text-lg">Reception</span>
           <div className="flex flex-col gap-1">
@@ -81,7 +89,7 @@ const EventVenue = () => {
         </div>
       )}
       {/* -----  Wedding Disabled Venue ----- */}
-      {new Date().getTime() > new Date(WEDDING_DATE).getTime() && (
+      {!isReceptionInvitation && new Date().getTime() > new Date(WEDDING_DATE).getTime() && (
         <div className="flex flex-col gap-3 bg-[#f9f9f9] mx-5 rounded-lg p-3 !text-[#cfcfcf] courser-default">
           <span className="font-serif-display text-lg">Wedding</span>
           <div className="flex flex-col gap-1">
