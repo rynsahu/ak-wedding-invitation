@@ -1,12 +1,15 @@
 'use client'
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import EventCountdown from "../EventCountdown";
 import { usePathname } from "next/navigation";
 
 const EventVenue = () => {
-  const WEDDING_DATE = '2024-03-11T23:30:00';
-  const RECEPTION_DATE = '2024-03-13T23:30:00';
+  // const WEDDING_DATE = '2024-03-11T23:30:00';
+  // const RECEPTION_DATE = '2024-03-13T23:30:00';
+
+  const [WEDDING_DATE, SET_WEDDING_DATE] = useState('2024-03-11T23:30:00');
+  const [RECEPTION_DATE, SET_RECEPTION_DATE] = useState('2024-03-13T23:30:00');
 
   const pathname = usePathname();
   const isReceptionInvitation = pathname.includes("invitation");
@@ -14,6 +17,11 @@ const EventVenue = () => {
   const INIT_EVENT_DATE = isReceptionInvitation ? RECEPTION_DATE : WEDDING_DATE;
 
   const [eventDate, setEventDate] = useState<any>(INIT_EVENT_DATE);
+
+  useEffect(() => {
+    SET_WEDDING_DATE('2024-03-11T23:30:00');
+    SET_RECEPTION_DATE('2024-03-13T23:30:00');
+  }, []);
 
   const handleDateExpired = (expiredDate: any) => {
     if (!isReceptionInvitation && !isWeddingInvitation) {
